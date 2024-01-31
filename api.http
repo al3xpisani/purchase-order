@@ -1,0 +1,65 @@
+GET http://localhost:3000/products
+
+###
+
+GET http://localhost:3000/products/2d94d79c-9a4c-4490-b35c-0b280561db1d
+Content-Type: application/json
+###
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{   
+    "name": "Product 2",
+    "description": "Product 2 description",
+    "price": 200,
+    "image_url": "http://www.localhost2"
+}
+###
+
+PATCH  http://localhost:3000/products/2d94d79c-9a4c-4490-b35c-0b280561db1d
+Content-Type: application/json
+
+{   
+    "name": "Product 2 changed",
+    "description": "Product 2 description changed",
+    "price": 200,
+    "image_url": "http://www.localhost2/changed"
+}
+###
+
+DELETE   http://localhost:3000/products/5003808b-01e5-4399-9966-92badc1d1af0
+
+###
+GET http://localhost:3000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSm9obiIsImlhdCI6MTcwNjcwNTM2NywiZXhwIjoxNzA2NzA1NzI3fQ.-9nYH7sxe9XOHN2gCZIN9gs1zAEze0pGt6VhtmXL8VI
+###
+
+POST http://localhost:3000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiSm9obiIsImlhdCI6MTcwNjcwNTM2NywiZXhwIjoxNzA2NzA1NzI3fQ.-9nYH7sxe9XOHN2gCZIN9gs1zAEze0pGt6VhtmXL8VI
+Content-Type: application/json
+
+{   
+    "items": [
+     {
+        "product_id": "2d94d79c-9a4c-4490-b35c-0b280561db1d",
+        "quantity": 1
+     },
+     {
+        "product_id": "99fdf5f4-687f-4175-ab14-a6fead5da7c1",
+        "quantity": 1
+     }
+    ],
+    "card_hash" : "123"
+}
+
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "John",
+    "password": "John"
+}
+
